@@ -1,17 +1,21 @@
 
-# arduino micro as attiny/atmega programmer
+# arduino micro as isp attiny/atmega programmer
 
 a simple pcb with a few sockets to program attiny/atmega microcontrollers from
-an arduino micro
+an arduino micro used as isp programmer
 
 # supported atmel chips
 
-* ATtiny 24/44/84
-* ATtiny 25/45/85
-* ATmega 48/88/168/328
-* ATmega 164/324/644/1284
+| Microcontroller         |                                              |
+|-------------------------|----------------------------------------------|
+| ATtiny 24/44/84         | http://www.atmel.com/devices/ATTINY84.aspx   |
+| ATtiny 25/45/85         | http://www.atmel.com/devices/ATTINY85.aspx   |
+| ATmega 48/88/168/328    | http://www.atmel.com/devices/ATMEGA328.aspx  |
+| ATmega 164/324/644/1284 | http://www.atmel.com/devices/ATMEGA1284.aspx |
 
 # usage
+
+all steps below include the use of the Arduino IDE: https://www.arduino.cc/en/Main/Software
 
 ## one-time initial setup
 
