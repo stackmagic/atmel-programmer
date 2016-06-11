@@ -94,12 +94,17 @@ once this is done, you can program as many chips as you want
 * the PRG led should light while the program is written
 * you're done!
 
-# screenshot
+# kicad screenshots
 
 ![board](images/programmer1.png "board")
 ![board](images/programmer2.png "board")
 ![board](images/programmer3.png "board")
 ![board](images/programmer4.png "board")
+
+# oshpark rendering
+
+![board](images/oshpark_front.png "board")
+![board](images/oshpark_back.png "board")
 
 # further reading
 
