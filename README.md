@@ -15,11 +15,61 @@ an arduino micro used as isp programmer
 
 # usage
 
-all steps below include the use of the Arduino IDE: https://www.arduino.cc/en/Main/Software
+all steps below include the use of the Arduino IDE: https://www.arduino.cc/en/Main/Software (1.6 or higher).
 
-## one-time initial setup
+Add the following URLs in `File > Preferences` for the setting `Additionals Boards Manager URLs`:
 
-* if you want to program an ATtiny and haven't set that up yet, see here: https://github.com/stackmagic/attiny/blob/master/README.md
+## ATtiny25/45/85 & ATtiny24/44/84 families:
+
+(Supports only 45/85 & 44/84)
+
+https://raw.githubusercontent.com/damellis/attiny/master/package_damellis_attiny_index.json
+
+## ATmega48/88/168/328 family:
+
+(Supports only 168/328)
+
+https://raw.githubusercontent.com/stackmagic/atmega/master/package_carlosefr_atmega_index.json
+
+Note: Once the PR at https://github.com/carlosefr/atmega/pull/4 is merged, use the official URL: https://raw.githubusercontent.com/carlosefr/atmega/master/package_carlosefr_atmega_index.json)
+
+## ATmega164/324/644/1284 family:
+
+https://mcudude.github.io/MightyCore/package_MCUdude_MightyCore_index.json
+
+If you want to program a `Non-P` version (for example an `ATmega1284` instead of an `ATmega1284p`), you need to open your avrdude.conf and add a Section like below. The non-P versions are essentially the same as the P versions and they can be cloned. The plain 644 is supported out of the box (with avrdude 6.0.1).
+
+```
+#------------------------------------------------------------
+# ATmega1284
+#------------------------------------------------------------
+
+part parent "atmega1284p"
+    id               = "m1284";
+    desc             = "ATmega1284";
+    signature        = 0x1e 0x97 0x06;
+  ;
+
+#------------------------------------------------------------
+# ATmega324
+#------------------------------------------------------------
+
+part parent "m324p"
+    id               = "m324";
+    desc             = "ATmega324";
+    signature        = ???????????????????????;
+  ;
+
+#------------------------------------------------------------
+# ATmega164
+#------------------------------------------------------------
+
+part parent "m164p"
+    id               = "m164";
+    desc             = "ATmega164";
+    signature        = ?????????????????????????
+  ;
+```
 
 ## prepare the programmer
 
